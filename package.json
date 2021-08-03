@@ -1,8 +1,11 @@
 {
-  "name": "copyfiles",
+  "name": "@wealthsimple/copyfiles",
   "version": "2.4.1",
   "description": "copy some files",
   "main": "index.js",
+  "publishConfig": {
+    "registry": "https://nexus.iad.w10external.com/repository/npm-private"
+  },
   "bin": {
     "copyfiles": "./copyfiles",
     "copyup": "./copyfiles"
@@ -23,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/calvinmetcalf/copyfiles.git"
+    "url": "git://github.com/wealthsimple/copyfiles.git"
   },
   "devDependencies": {
     "rimraf": "^2.2.6",

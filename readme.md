@@ -1,5 +1,4 @@
-copyfiles [![Build Status](https://travis-ci.org/calvinmetcalf/copyfiles.svg)](https://travis-ci.org/calvinmetcalf/copyfiles)
-===
+> Fork of https://github.com/calvinmetcalf/copyfiles/, adding these changes: https://github.com/calvinmetcalf/copyfiles/pull/104
 
 copy files easily
 
@@ -8,6 +7,7 @@ copy files easily
 ```bash
 npm install copyfiles -g
 ```
+
 ### Command Line
 
 ```bash
@@ -27,7 +27,7 @@ npm install copyfiles -g
 ```
 
 copy some files, give it a bunch of arguments, (which can include globs), the last one
-is the out directory (which it will create if necessary).  Note: on windows globs must be **double quoted**, everybody else can quote however they please.
+is the out directory (which it will create if necessary). Note: on windows globs must be **double quoted**, everybody else can quote however they please.
 
 ```bash
 copyfiles foo foobar foo/bar/*.js out
@@ -75,6 +75,7 @@ copyfiles -f "./foo/**/*.txt" out
 does.
 
 You could quote globstars as a part of input:
+
 ```bash
 copyfiles some.json "./some_folder/*.json" ./dist/ && echo 'JSON files copied.'
 ```
@@ -98,11 +99,13 @@ also creates a `copyup` command which is identical to `copyfiles` but `-up` defa
 ### Programic API
 
 ```js
-var copyfiles = require('copyfiles');
+var copyfiles = require("copyfiles");
 
 copyfiles([paths], opt, callback);
 ```
-takes an array of paths, last one is the destination path, also takes an optional argument which the -u option if a number, otherwise if it's `true` it's the flat option or if it is an object it is a hash of the various options (the long version e.g. up, all, flat, exclude, error, verbose, follow, and soft)  
+
+takes an array of paths, last one is the destination path, also takes an optional argument which the -u option if a number, otherwise if it's `true` it's the flat option or if it is an object it is a hash of the various options (the long version e.g. up, all, flat, exclude, error, verbose, follow, and soft)
 
 ### Tilde support for home directory
+
 when the src/dest path start with tilde for home directory under windows, please make sure -u or -f is added in options or use copyup command. if not you will get `Error: Illegal characters in path.`
